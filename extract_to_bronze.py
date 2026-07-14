@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 load_dotenv()
 
 pg_conn = psycopg2.connect(
-    host="localhost",
+    host=os.environ.get("PG_HOST", "localhost"),
     port=5432,
     dbname="sap_messy_data",
     user="postgres",
@@ -16,8 +16,9 @@ pg_conn = psycopg2.connect(
 pg_cur = pg_conn.cursor()
 
 credentials = service_account.Credentials.from_service_account_file(
-    "keys/dbt_service_account.json"
+    os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "keys/dbt_service_account.json")
 )
+
 bq_client = bigquery.Client(
     credentials=credentials,
     project="sap-postgres-pipeline"
