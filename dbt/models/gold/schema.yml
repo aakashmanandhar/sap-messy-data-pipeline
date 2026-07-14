@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: gold_revenue_by_country
+    description: "Business-ready net revenue by country and month - the table BI and AI/ML would query."
+    columns:
+      - name: country
+        tests:
+          - not_null
+      - name: net_revenue
+        tests:
+          - not_null
