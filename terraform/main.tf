@@ -19,6 +19,14 @@ resource "google_bigquery_dataset" "bronze" {
   description = "Raw SAP data landed from PostgreSQL — untyped, no transformation."
 }
 
+resource "google_bigquery_table" "bronze_sales_orders" {
+  dataset_id          = google_bigquery_dataset.bronze.dataset_id
+  table_id            = "sales_orders"
+  deletion_protection = false
+
+  schema = file("${path.module}/../schemas/sales_orders_bronze.json")
+}
+
 resource "google_bigquery_dataset" "silver" {
   dataset_id  = "silver_dev"
   location    = var.region

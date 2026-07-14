@@ -1,0 +1,9 @@
+[
+  {"name": "vbeln", "type": "STRING", "mode": "NULLABLE", "description": "SAP sales order number"},
+  {"name": "kunnr", "type": "STRING", "mode": "NULLABLE", "description": "SAP customer number"},
+  {"name": "name1", "type": "STRING", "mode": "NULLABLE", "description": "Customer name"},
+  {"name": "land1", "type": "STRING", "mode": "NULLABLE", "description": "Country, as stored at source"},
+  {"name": "netwr", "type": "STRING", "mode": "NULLABLE", "description": "Net order value, as text"},
+  {"name": "waerk", "type": "STRING", "mode": "NULLABLE", "description": "Currency code"},
+  {"name": "erdat", "type": "STRING", "mode": "NULLABLE", "description": "Order date, raw SAP format YYYYMMDD"}
+]
