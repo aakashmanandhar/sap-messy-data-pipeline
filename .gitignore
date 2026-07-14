@@ -1,3 +1,8 @@
 .env
 __pycache__/
-*.pycgit
+*.pyc
+keys/*.json
+terraform/terraform.tfvars
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
