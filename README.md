@@ -11,6 +11,8 @@ this README documents the actual process, not just the finished result.
 
 ## Architecture
 
+![Architecture diagram](docs/architecture.png)
+
 PostgreSQL (messy source)
 -> Python extraction script
 -> BigQuery Bronze (raw, untouched)
