@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    dataset: bronze_dev
+    tables:
+      - name: sales_orders
+        description: "Raw SAP data landed from PostgreSQL - untyped, unrenamed, untouched."

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: silver_sales_orders
+    description: "Cleaned SAP sales orders - deduplicated, typed, standardized country codes."
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: amount
+        tests:
+          - not_null
+      - name: order_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['sale', 'return']

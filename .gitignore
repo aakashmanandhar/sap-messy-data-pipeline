@@ -10,3 +10,4 @@ venv/
 dbt/profiles.yml
 dbt/logs/
 dbt/.user.yml
+dbt/target/
