@@ -26,6 +26,7 @@ Each tool does one job.
 
 ## Project folder structure
 
+```text
 sap-messy-data-project/
 ├── .env                          - DB_PASSWORD (not committed)
 ├── .gitignore
@@ -64,10 +65,10 @@ sap-messy-data-project/
 │       └── generate_schema_name.sql  - makes +schema map to exact dataset name
 │
 └── airflow/
-├── Dockerfile                 - Airflow + dbt-bigquery + psycopg2
-└── dags/
-└── sap_pipeline_dag.py     - extract -> dbt Silver -> dbt Gold -> dbt test
-
+    ├── Dockerfile                 - Airflow + dbt-bigquery + psycopg2
+    └── dags/
+        └── sap_pipeline_dag.py     - extract -> dbt Silver -> dbt Gold -> dbt test
+```
 ## The full process, in the order it was actually built
 
 ### 1. PostgreSQL - the messy source
@@ -266,4 +267,4 @@ cd terraform && terraform destroy
 - CI/CD: validating Terraform and dbt on every push via GitHub Actions
 - Real SAP connection: once real server access details are available,
   swapping the extraction step for the actual connection method (OData,
-  RFC, or JDBC), while the Terraform/dbt/Airflow skeleton stays unchanged
+  RFC, or JDBC), while the Terraform/dbt/Airflow skeleton stays unchangedcat README.md
